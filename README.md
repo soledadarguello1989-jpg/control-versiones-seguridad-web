@@ -27,6 +27,13 @@ La gestión de cambios también permite identificar posibles conflictos. Un conf
 ### 5. Seguridad antes del lanzamiento
 Antes de publicar una aplicación web, es importante realizar revisiones básicas de seguridad. Esto incluye validar los datos que ingresan los usuarios, revisar permisos de acceso, proteger contraseñas y evitar que información sensible quede visible dentro del código.
 También es recomendable hacer pruebas antes de pasar a producción, para detectar errores o vulnerabilidades. De esta forma, GitHub no solo ayuda a organizar los cambios del proyecto, sino también a controlar que el código sea revisado antes de llegar al usuario final
+## Proceso propuesto de control de versiones y cambios en GitHub
+
+Para simular un ambiente de Desarrollo, Certificación y Producción, se propone trabajar con tres ramas principales en GitHub. La rama `develop` representará el ambiente de desarrollo, donde se realizarán los cambios iniciales, nuevas funciones y correcciones. La rama `certificacion` servirá para validar los cambios antes de publicarlos, realizando pruebas funcionales y pruebas básicas de seguridad. Finalmente, la rama `main` representará el ambiente de producción, donde solo se integrarán cambios revisados y aprobados.
+
+El proceso inicia cuando se crea una rama de trabajo para una nueva funcionalidad o corrección. Luego, el cambio se integra a `develop` mediante un commit. Después de revisar que funcione correctamente, se realiza una fusión hacia `certificacion`, donde se ejecutan pruebas de seguridad como validación de entradas, revisión de permisos, protección de contraseñas y verificación de que no existan datos sensibles visibles en el código. Si las pruebas son satisfactorias, el cambio se integra finalmente a `main`, que representa la versión estable del producto.
+
+Este proceso permite mantener un orden en el desarrollo, reducir errores antes del lanzamiento y evitar que cambios inseguros lleguen directamente al usuario final.
 ## Conclusiones
 El control de versiones es importante porque permite organizar los cambios de un proyecto y evitar problemas como pérdida de información o confusión entre versiones. GitHub facilita este proceso mediante repositorios, ramas, historial de cambios y revisión del código.
 También es necesario separar los entornos de desarrollo, certificación y producción, ya que esto permite probar los cambios antes de publicarlos. De esta manera, se reduce el riesgo de errores y se mejora la seguridad de la aplicación web.
